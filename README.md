@@ -1,0 +1,1 @@
+This script takes list of yeast proteins from the data/orf_trans_all.fa file. It looks through every protein to see if it contains a zinc finger motif. If it finds one (or more), it writes the name of the protein and the actual sequences it found into a file called results/yeast_zinc_finger_orf.txt. At the very end, it also adds up how many proteins in total had the motif.
