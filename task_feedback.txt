@@ -1,0 +1,32 @@
+feedback:
+
+This is a well-structured and relatively strong solution. The student correctly:
+
+parses the FASTA protein file,
+handles multi-line protein sequences properly,
+searches all proteins,
+writes all motif matches to the output file,
+counts proteins containing the motif only once,
+and, importantly, correctly supports overlapping matches using a lookahead-based regex:
+(?=(C.H.[LIVMFY]C..C[LIVMYA]))
+
+Using overlapping matching is an important requirement of the assignment and was implemented correctly here.
+
+The code organization is also good, and using dictionaries to store proteins and motif results improves readability.
+
+However, there is still one major issue:
+
+The Zinc Finger motif regex itself:
+
+C.H.[LIVMFY]C..C[LIVMYA]
+
+does not correctly implement the biological motif described in the assignment. The expected motif contains different spacing rules and Histidine positions, so the biological search pattern is inaccurate.
+
+Minor improvements:
+
+Using with open(...) for the input file would be safer and more standard for file handling.
+The variable name gene is slightly misleading here because the file contains proteins rather than genes.
+
+Overall, this is one of the stronger submissions structurally because overlapping matches were handled correctly, but the biological motif definition is still incorrect.
+
+Grade: 6.5/8
